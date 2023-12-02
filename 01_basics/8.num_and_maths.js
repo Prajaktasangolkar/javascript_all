@@ -21,11 +21,11 @@ console.log(Math.floor(4.8));
 console.log(Math.min(3,1,6,8));
 console.log(Math.max(3,1,6,8));
 
-console.log(Math.random());
+console.log(Math.random());  //values bet 0 and 1 
 console.log(Math.floor(Math.random()*10) +1); //so value can't be 0
 
 
 const min=10
 const max=20
 
-console.log(Math.floor(Math.random()*(max-min+1)))
+console.log(Math.floor(Math.random()*(max-min+1))+10)
