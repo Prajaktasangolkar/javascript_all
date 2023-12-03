@@ -33,7 +33,7 @@ chai1()
 //   return num1+num2;
 // }
 // ----this is implicite function-----
-const addTwo=(num1,num2)=>num1+num2;
+// const addTwo=(num1,num2)=>num1+num2;
 
-
+const addTwo=(num1,num2)=>({username:'hitesh'}); //username wants in ({})this only
 console.log(addTwo(3,4));
