@@ -1,6 +1,6 @@
 /*
 Javascript Execution Context
-// when u execeute the code there will be global execution context will be generated
+ when u execeute the code there will be global execution context will be generated
 inside this whatever global EC made this will be refer by using "this" 
 brower and nodejs execution context is different
 brower global EC value is window 
@@ -9,11 +9,8 @@ js is single threaded
 
 1.global Execution context
 2.function EC
-3.Eval EC //property for global object
+3.Eval EC //property for global object*/
 
-
-
-*/
 let val1=10
 let val2=5
 function addNum(num1,num2){
@@ -21,7 +18,9 @@ function addNum(num1,num2){
     return total
 }
 let result1=addNum(val1,val2)
-let result2=addNum(10,2)
+console.log((result1));
+console.log(addNum(8,9));
+// let result2=addNum(10,2)
 
 /*
 phases after code executing
@@ -44,4 +43,30 @@ Memory phase                Exeecution context          Delete     result1=15   
 val1=undefinde              num1=10
 val2=undefined              num2=5
 total=undefined             total=15
+*/
+
+
+// +++++++++++++Call Stack+++++++++++++++++++++
+// run in source of web in snippet
+/*
+call stack---work as Last in first out 
+function one(){
+    console.log('one')
+    two()
+}
+
+function two(){
+    console.log('two')
+    three()
+}
+function three(){
+    console.log('three')
+    
+}
+
+
+one()
+two()
+three()
+
 */
