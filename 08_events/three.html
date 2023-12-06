@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+  
+    
+// for start button
+const startButton = document.querySelector('#start');
+const stopButton = document.querySelector('#stop');
+let intervalId;
+
+function logDateTime() {
+    console.log(new Date());
+}
+
+startButton.addEventListener('click', function() {
+    // Log the initial date/time when the start button is clicked
+    logDateTime();
+
+    // Set up an interval to log date/time every 1000 milliseconds (1 second)
+    intervalId = setInterval(logDateTime, 1000);
+});
+
+stopButton.addEventListener('click', function() {
+    // Clear the interval when the stop button is clicked
+    clearInterval(intervalId);
+});
+
+
+
+
+</script>
+</html>

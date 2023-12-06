@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+//    give me some time and i will do that work again with same time stop
+// setInterval
+
+//    give me some time and i will do that work
+//     setTimeout(function(){
+//    console.log('Praju');
+//     },2000)
+
+    const sayHi=function(){
+        console.log('Praju');
+    }
+    // setTimeout(sayHi,2000)
+
+    // ++++++++setTimeOut++++++++
+    const changeText=function(){
+        document.querySelector('h1').innerHTML="best JS series"
+    }
+    const changeMe=setTimeout(changeText,2000)
+
+    //++++++++++clearTimeout++++++++++++++
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe)
+        console.log('STOPPED');
+    })
+    
+    
+
+
+</script>
+</html>
