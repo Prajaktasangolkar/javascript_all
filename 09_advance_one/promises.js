@@ -36,6 +36,7 @@ promiseThree.then(function(user){
     console.log(user);
 })
 
+/*
 const promiseFour=new Promise(function(resolve,reject){
     setTimeout(function(){
         let error=true
@@ -57,3 +58,100 @@ promiseFour.then((user)=>{
 }).catch(function(error){
     console.log(error);
 })
+
+// answer
+// Async task is complete
+// Promise consumed
+// Async task 2
+// async 2 resolved
+// { username: 'chai', email: 'chai@chai.com' }
+// Error:Something went wrong
+*/
+
+const promiseFour=new Promise(function(resolve,reject){
+    setTimeout(function(){
+        let error=false
+        if (!error){
+            resolve({username:"praju",email:"chai@chai.com"})
+        }
+        else{
+            reject('Error:Something went wrong')
+        }
+    },1000)
+})
+
+
+promiseFour.then((user)=>{
+ console.log(user);
+ return user.username
+}).then((username)=>{  //.then(user).then(username)
+   console.log(username);
+}).catch(function(error){
+    console.log(error);
+})
+
+//answer
+/*
+Async task is complete
+Promise consumed
+Async task 2
+async 2 resolved
+{ username: 'chai', email: 'chai@chai.com' }
+{ username: 'praju', email: 'chai@chai.com' }
+praju
+*/
+
+const promiseFive=new Promise(function(resolve,reject){
+    setTimeout(function(){
+        let error=false
+        if (!error){
+            resolve({username:"praju",email:"chai@chai.com"})
+        }
+        else{
+            reject('Error:Something went wrong')
+        }
+    },1000)
+})
+
+
+promiseFive.then((user)=>{
+ console.log(user);
+ return user.username
+}).then((username)=>{  //.then(user).then(username)
+   console.log(username);
+}).catch(function(error){
+    console.log(error);
+}).finally(()=>
+console.log("The promise is either resolved and rejected ")
+)  //this is default
+//like error has come or promise will run whatever will be done but this will show that done all things
+
+
+const promiseSix=new Promise(function(resolve,reject){
+    setTimeout(function(){
+        let error=false
+        if (!error){
+            resolve({username:"js",password:"123"})
+        }
+        else{
+            reject('Error:Something went wrong')
+        }
+    },1000)
+})
+
+async function consumePromiseSix(){
+    //async can't handle the error
+    try{
+        const response=await promiseSix;
+        console.log(response);
+    }
+    catch(error){
+           console.log(error);
+    }
+}
+
+consumePromiseSix()
+
+async function getAllUsers(){
+    const response=await fetch('https://jsonplaceholder.typicode.com/users')
+}
